@@ -1,3 +1,4 @@
+#Crear una tabla de multiplicar
 num = int(input ("Dime un numero "))
 print (f"Tabla de multiplicar del {num}")
 
