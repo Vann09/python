@@ -1,3 +1,4 @@
+#Calculo de fecha de nacimiento
 from datetime import datetime
 
 print ("¿Cual es tu fecha de nacimiento?")
@@ -12,4 +13,3 @@ if (años >= 18):
 else:
     edad = 18 - años
     print (f"Te faltan {edad} años para ser mayor de edad.")
-    
