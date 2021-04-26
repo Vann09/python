@@ -5,9 +5,11 @@ dt = datetime.now().date()
 fecha = input ()
 dt2 = datetime.strptime(fecha, "%d-%m-%Y").date()
 años = dt.year - dt2.year
-if (años > 18):
+
+if (años >= 18):
     print (f"Tienes {años} años, eres mayor de edad.")
 
 else:
     edad = 18 - años
     print (f"Te faltan {edad} años para ser mayor de edad.")
+    
