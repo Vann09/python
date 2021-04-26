@@ -1,4 +1,4 @@
-#Calculo de fecha de nacimiento
+#Pregunto fecha de nacimiento y calculo si es no mayor de edad
 from datetime import datetime
 
 print ("¿Cual es tu fecha de nacimiento?")
