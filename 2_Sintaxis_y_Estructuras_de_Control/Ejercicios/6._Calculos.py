@@ -24,8 +24,8 @@ m = sum / len(lista)
 print (m)
 
 for p in lista:
-    if p % 2 == 0:
-        print (num)
+    if num % 2 == 0:
+        print ()
 
 
         
