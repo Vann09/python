@@ -28,7 +28,7 @@ impar = 0
 for num in lista:
     if (num % 2 == 0):
         par += 1
-        print (f"Hay {par} números pares.")
     else:
         impar += 1
-        print (f"Hay {impar} números impares.")
+print (f"Hay {par} números pares.")
+print (f"Hay {impar} números impares.")
