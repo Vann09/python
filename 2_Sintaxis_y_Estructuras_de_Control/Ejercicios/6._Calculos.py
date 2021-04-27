@@ -7,7 +7,7 @@ contador = 0
 
 while (contador < 10):
     contador += 1
-    num = int(input ("Dime 10 números "))
+    num = int(input ("Dime 10 números: "))
     if (type(num) is int):
         lista.append(num)
     else:
@@ -23,10 +23,12 @@ print (sum)
 m = sum / len(lista)
 print (m)
 
-for p in lista:
-    if num % 2 == 0:
-        print ()
-
-
-        
-
+par = 0
+impar = 0
+for num in lista:
+    if (num % 2 == 0):
+        par += 1
+        print (f"Hay {par} números pares.")
+    else:
+        impar += 1
+        print (f"Hay {impar} números impares.")
