@@ -13,15 +13,9 @@ while (contador < 10):
     else:
         print ("No es correcto")
 
-print (lista)
-
 sum = 0
 for s in lista:
     sum = s + sum
-print (sum)
-
-m = sum / len(lista)
-print (m)
 
 par = 0
 impar = 0
@@ -30,5 +24,9 @@ for num in lista:
         par += 1
     else:
         impar += 1
+
+print (lista)
+print (f"Suma total: {sum}.")
+print (f"Media: {sum/len(lista)}.")
 print (f"Hay {par} números pares.")
 print (f"Hay {impar} números impares.")
