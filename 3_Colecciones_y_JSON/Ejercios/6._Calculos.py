@@ -4,22 +4,20 @@
 
 lista = []
 contador = 0
+par = 0
+impar = 0
+sum = 0
 
 while (contador < 10):
     contador += 1
-    num = int(input ("Dime 10 números: "))
-    if (type(num) is int):
-        lista.append(num)
+    num = input ("Dime 10 números: ")
+    if (num.isdigit()):
+        lista.append(int(num))
     else:
-        print ("No es correcto")
+        print (f"{num} no es un número")
 
-sum = 0
-for s in lista:
-    sum = s + sum
-
-par = 0
-impar = 0
 for num in lista:
+    sum += num
     if (num % 2 == 0):
         par += 1
     else:
