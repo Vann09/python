@@ -2,29 +2,27 @@
 # 2. Mostramos los numeros
 # 3. Mostramos la suma total de todos, la media, cantidad de numero pares y la cantidad de numeros impares
 
-lista = []
-contador = 0
+numeros = []
 par = 0
 impar = 0
 sum = 0
 
-while (contador < 10):
-    contador += 1
+while (len(numeros) < 10):
     num = input ("Dime 10 números: ")
     if (num.isdigit()):
-        lista.append(int(num))
+        numeros.append(int(num))
     else:
         print (f"{num} no es un número")
 
-for num in lista:
+for num in numeros:
     sum += num
     if (num % 2 == 0):
         par += 1
     else:
         impar += 1
 
-print (lista)
+print (numeros)
 print (f"Suma total: {sum}.")
-print (f"Media: {sum/len(lista)}.")
+print (f"Media: {sum/len(numeros)}.")
 print (f"Hay {par} números pares.")
 print (f"Hay {impar} números impares.")
