@@ -44,9 +44,3 @@ class Alumno:
         else:
             return datetime.now().year - self.FechaNacimiento.year
 
-#Instanciamos el Objeto, se ejecuta la función constructor
-alumno = Alumno("Borja", "Cabeza", "Rozas")
-
-#Invocamos a las funciones del objeto
-alumno.setFechaNacimiento("11-09-95")
-print(f"Edad: {alumno.getEdad()}")
