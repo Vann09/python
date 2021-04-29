@@ -11,6 +11,12 @@ class Cliente:
         self.Nombre = nombre
         self.Apellido = apellido
 
+def BuscarClienteId (Item):
+        if Item.Id == 2456:
+            return True
+        else:
+            return False
+
 clientes = []
 
 path = "4._Funciones_Clases_y_Modulos\\Ejercicios\\fichero.txt"
@@ -21,10 +27,21 @@ for linea in (file.readlines()):
     if data[0].isdigit() == True:
         cliente = Cliente (data[7], data[1], data [2])
         clientes.append(cliente)      
-            
-    
+               
 file.close ()
-print (f"{len(clientes)}. ")
+print (f"{len(clientes)} importados. ")
+
+#for c in clientes: #para comprobar que ha cogido los datos
+    #print (c.Nombre)
+
+while True:
+    posicion = input("Dime una posicion: ")
+    if posicion == "fin":
+        break
+    else:
+        print (f"{clientes[int(posicion)].Id}{clientes[int(posicion)].Nombre} {clientes[int(posicion)].Apellido}")
     
+
+
 
     
