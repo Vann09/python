@@ -97,12 +97,20 @@ print (f"{len(list(filter(BuscarMaleUS, clientes)))} clientes varones y estadoun
 print (f"{len(list(filter(BuscarFemaleBrit26, clientes)))} clientes mujeres mayores de 26 años y británicas.")
 print ()
 
+#24 años, hombre, United State
 E = int(input ("Edad: "))
 P = input ("Pais: ")
 G = input("Genero: ")
 
-print (f"{len(list(filter(lambda x : x.Edad == E and x.Pais == P and x.Genero == G, clientes)))} coincidentes con los criterios.")
-asfdgfdgfddfgd
+resultado = list(filter(lambda x : x.Edad == E and x.Pais == P and x.Genero == G, clientes))
+print (f"{len(resultado)} clientes coincidentes con los criterios.")
 
+contador = 0
+file2 = open ("resultado.txt", "wt")
+file2.write ("Row,First Name,Last Name,Gender,Country,Age,Date\n")
 
-dfhdf
+for item in resultado:
+    contador += 1
+    file2.write(f"{contador},{item.Nombre},{item.Apellido},{item.Genero},{item.Pais},{item.Edad},{item.FechaAlta.strftime('%d/%m/%Y')}\n")
+
+file.close ()
