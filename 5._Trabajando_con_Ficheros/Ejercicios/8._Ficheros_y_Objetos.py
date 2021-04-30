@@ -55,7 +55,7 @@ def BuscarFemaleBrit26 (Item):
 
 clientes = []
 
-path = "4._Funciones_Clases_y_Modulos\\Ejercicios\\fichero.txt"
+path = "Ficheros\\fichero.txt"
 file = open(path)
 
 for linea in (file.readlines()):

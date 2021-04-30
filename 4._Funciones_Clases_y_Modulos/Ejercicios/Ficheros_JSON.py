@@ -9,7 +9,7 @@ def PrintData (cliente):
     print (f"Teléfono:      {cliente['Phone']} Fax: {cliente['Fax']}") 
 
 
-file = open("D:\\Github\\python\\4._Funciones_Clases_y_Modulos\\Ejercicios\\clientes.json", "rt", encoding='UTF-8')
+file = open("Ficheros\\clientes.json", "rt", encoding='UTF-8')
 
 dataJSON = file.read()
 file.close ()
