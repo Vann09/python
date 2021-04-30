@@ -102,3 +102,7 @@ P = input ("Pais: ")
 G = input("Genero: ")
 
 print (f"{len(list(filter(lambda x : x.Edad == E and x.Pais == P and x.Genero == G, clientes)))} coincidentes con los criterios.")
+asfdgfdgfddfgd
+
+
+dfhdf
