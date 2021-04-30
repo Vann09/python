@@ -1,26 +1,13 @@
-#####################################################################
-# Clases                                                            #
-#####################################################################
-#                                                                   #
-#   Sintaxis: class [nombre de la clase]):                          #
-#                                                                   #
-#   Ejemplos:                                                       #
-#       class Alumno:                                               #    
-#                                                                   #
-#####################################################################
 
 from datetime import datetime
 
-#Creamos una clase utilizando class
 class Alumno:
-    #Variables o Propiedades de la clase
+
     Nombre = None
     Apellido1 = None
     Apellido2 = None
     FechaNacimiento = None
 
-    #Función constructor se ejecuta al crear el objeto
-    #self representa al mismo objeto
     def __init__(self, nombre, apell1, apell2) -> None:
         self.Nombre = nombre
         self.Apellido1 = apell1
