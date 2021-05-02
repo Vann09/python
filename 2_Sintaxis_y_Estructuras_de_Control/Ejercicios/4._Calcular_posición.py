@@ -10,7 +10,7 @@ letra = input ("Dime una letra: ")
 
 valor = 0                           #variable que funciona como indice
 contador = 0                        #variable que uso para contar coincidencias
-while (valor < len(frase)):         #mientras valor del indice sea inferio al numero de elementos de la colección
+while (valor < len(frase)):         #mientras valor del indice sea inferior al numero de elementos de la colección
     if (frase[valor] == letra):
         contador +=1
     valor += 1
