@@ -17,6 +17,7 @@ print (cadena.replace("o","+")) #Cambia la o por +
 print (cadena.upper()) #Pone todo en mayus
 print (cadena.lower()) #Pone todo en minus
 print (cadena.capitalize()) #Pone en mayuscula la primera letra
+print (cadena.title()) #Pone en mayuscula la primera letra de cada palabra
 print (cadena.isdigit()) #Si contiene solo digitos, devuelve true o false
 print (cadena.isupper()) #Si esta todo en mayusculas
 print("")
