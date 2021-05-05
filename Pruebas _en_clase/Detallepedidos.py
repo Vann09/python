@@ -31,7 +31,7 @@ if (pedido != None):
         #Descripcion - Cantidad - Precio - Precio*cantidad
         total = int(linea['Quantity'])* float(linea['UnitPrice'])
         print (f"{producto['ProductName']:<35} {linea['Quantity']:>6} {linea['UnitPrice']:>8} {total:>8}")
-
+    #Mostrar el importe total del pedido
     
 else:
     print (f"El pedido {IdPedido} no existe.")
