@@ -1,6 +1,7 @@
 from pymongo import MongoClient
 
-#Cliente
+client = MongoClient ('localhost',27017)
+client = MongoClient ('mongodb://localhost:27017/')
 client = MongoClient ('localhost',27017)
 
 #Base de datos
@@ -15,7 +16,7 @@ idPedido = input("Identificador del pedido: ")
 
 pedido = orders.find_one({'OrderID': idPedido}) 
 if (pedido != None):
-    print(f"Datos del pedido {idPedido}.")
+    print(f"Datos del pedido {IdPedido}.")
     print(f"Entregar: {pedido['ShipName']}.")
     print(f"          {pedido['ShipAddress']}.")
     print(f"          {pedido['ShipCity']} {pedido['ShipCountry']}.")
@@ -34,4 +35,4 @@ if (pedido != None):
     #Mostrar el importe total del pedido
     
 else:
-    print (f"El pedido {idPedido} no existe.")
+    print (f"El pedido {IdPedido} no existe.")

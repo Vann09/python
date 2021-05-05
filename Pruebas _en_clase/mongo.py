@@ -18,6 +18,7 @@ db = client.admin
 status = db.command("serverStatus")
 #pprint (status)
 
+
 ## Trabajando con datos
 # Seleccionar base de datos con la que trabajar
 
