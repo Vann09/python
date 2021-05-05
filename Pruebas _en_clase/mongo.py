@@ -1,5 +1,7 @@
 from pymongo import MongoClient
 from pprint import pprint
+from bson.objected import ObjectId
+import sys, json
 
 ## Establecer conexión con MongoDB (motor de base de datos)
 
@@ -35,13 +37,18 @@ collection = northwindDB.customers
 #Utilizo estimated_document_count() para saber el nº de documentos en la coleccion
 result = collection.estimated_document_count()
 print (result)
-#Buscar documentos dentro de una coleccion
 
+#Buscar documentos dentro de una coleccion
 result = collection.find({'Country': 'USA'})
+result = collection.find({'Country': 'USA'}).limit[3]
+result = collection.find({'Country': 'USA'}).skip [4]
+result = collection.find({'Country': 'USA'}).sort('City')
+result = collection.find({'Country': 'USA'}).sort('City', 1) # Ordena de A a W
+result = collection.find({'Country': 'USA'}).sort('City', -1) # Ordena de W a A
 result = collection.find({'Country': 'USA', 'City': 'Portland'})
 result = collection.find({'Country': {'$in' : ['USA', 'Mexico']}})
-result.next()
-pprint (result)
+print (result.next())
+pprint (result.alive())
 print (collection.count_documents({'Country': 'USA'}))
 
 
@@ -50,7 +57,7 @@ print (collection.count_documents({'Country': 'USA'}))
 #pprint (result)
 
 
-#Insertar nuevos registros
+#Insertar un documento en la coleccion usando un objeto JSON
 customer = {
     "CustomerID": "DEMO2",
     "CompanyName": "Uno Alimentación SL",
@@ -64,12 +71,50 @@ customer = {
     "Phone": "(91) 652 165 456",
     "Fax": "(91) 652 165 454"
 }
-
 #idNewDocument = collection.insert_one(customer).inserted_id
 #print ('ID Nuevo Documento:', idNewDocument)
 
-query = {'CustomerID': 'DEMO2'}
-newValues = {
+# Inserto un documento a través de un objeto de python
+class Customer:
+    CustomerID = None
+    CompanyName = None
+    ContactName = None
+    ContactTitle = None
+    Address = None
+    City = None
+    Region = None
+    PostalCode = None
+    Country = None
+    Phone = None
+    Fax = None
+
+cliente = Customer()
+cliente.CustomerID = "DEMO3"
+cliente.CompanyName = "Tres bebidas SL"
+cliente.ContactName = "Jose Izquierdo"
+cliente.ContactTitle = "Regente"
+cliente.Address = "Avenida del coche, 25"
+cliente.City = "Madrid"
+cliente.Region = "Madrid"
+cliente.PostalCode = "28034"
+cliente.Country = "Spain"
+cliente.Phone = "(91) 652 12 58"
+cliente.Fax = "(91) 652 12 59"
+
+pprint (cliente.__dict__)
+
+
+idNewDocument = client.Northwind.customers.insert_one(cliente.__dict__).inserted_id
+print ('ID Nuevo Documento:', idNewDocument)
+
+
+#Actualizo documentos en una colección
+
+#Busqueda en la DB
+query = {'CustomerID': 'DEMO2'} 
+
+# Valores a añadir
+newValues = {                   
     "$set" : {
         "CompanyName": "Catering 2 SL", 
         "Address": "Avenida del Tren, 45",
@@ -77,6 +122,8 @@ newValues = {
         }
     }
 
+
+#result = collection.update_many(query, newValues)
 result = collection.update_one(query, newValues)
 print (result.matched_count, 'elementos encontrados.')
 print (result.modified_count, 'elementos modificados.')
