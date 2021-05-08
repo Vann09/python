@@ -74,12 +74,12 @@ print (f"{len(clientes)} importados. ")
 #for c in clientes: #para comprobar que ha cogido los datos
     #print (c.Nombre)
 
-#while True:
-    #posicion = input("Dime una posicion: ")
-    #if posicion == "fin":
-        #break
-    #else:
-        #print (f"{clientes[int(posicion)].Id}{clientes[int(posicion)].Nombre} {clientes[int(posicion)].Apellido}")
+while True:
+    posicion = input("Dime una posicion: ")
+    if posicion == "fin":
+        break
+    else:
+        print (f"{clientes[int(posicion)].Id}{clientes[int(posicion)].Nombre} {clientes[int(posicion)].Apellido}")
 
 #resultado= list(filter(BuscarClienteId, clientes))
 #resultado= list(filter(lambda x : x.Id == "1562", clientes))
