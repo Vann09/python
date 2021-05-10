@@ -1,4 +1,4 @@
-import sqlite3
+import sqlite3  #https://docs.python.org/es/3/library/sqlite3.html
 import sys
 
 connection = sqlite3.connect('demo.db')
