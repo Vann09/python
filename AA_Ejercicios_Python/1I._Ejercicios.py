@@ -17,10 +17,11 @@ for c in range (0, len(listcolor)-1):
 print (listcolor[letra]+" es el color con más letras, " + str(len(listcolor[letra])))
     
 #### I4. Muestra el color que más vocales contenga
-
+vocal = "aeiouAEIOU"
 for i in range (len(listcolor)-1 ):
     for k in  range (len(listcolor[i])-1):
-        print(k)
+        if letra == "aeiouAEIOU":
+            
         
 
 #### I5. Muestra la cantidad de colores que comienza y finaliza por vocal

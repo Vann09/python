@@ -6,7 +6,7 @@ connection = sqlite3.connect('Northwind.db')
 cursor = connection.cursor()
 
 #Creamos un tabla creada Customers
-command = "SELECT count() FROM sqlite_master WHERE type = 'table' AND name = 'Customers'
+command = "SELECT count() FROM sqlite_master WHERE type = 'table' AND name = 'Customers'"
 cursor.execute(command)
 numTablas = cursor.fetchone()[0]
 if (numTablas == 0):
@@ -14,3 +14,19 @@ if (numTablas == 0):
     cursor.execute(command)
 
 #Transladamos la info de SQL Server -> SQLite
+
+connection2 = pymssql.connect(server='localhost', user = 'test', password = 'test100', database = 'Northwind')
+
+cursor2 = connection2.cursor()
+command = 'SELECT * FROM Customers'
+cursor2.execute(command)
+
+data = cursor2.fetchall()
+
+command = "INSERT INTO Customers VALUES (?,?,?,?,?,?,?,?,?,?,?)"
+cursor.executemany(command, data)
+connection.commit()
+
+cursor.close()
+cursor2.close()
+connection2.close()
