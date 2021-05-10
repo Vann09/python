@@ -12,6 +12,8 @@ import math
 
 
 # del 10 a 10000 de 100 en 100
+#for y in range (10, 10000, 100):
+    #print (y)
 
 # los números impares del 51 al 91 DONE
 #for i in range (51, 93, 2):
@@ -22,7 +24,6 @@ import math
 #for y in range(30, 41):
     #if y%5 == 0:
         #print(y)
-
 
 # tabla de multiplicar de PI DONE
 #print (f"Tabla de multiplicar de PI")
