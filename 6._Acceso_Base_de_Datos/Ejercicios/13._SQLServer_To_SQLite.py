@@ -1,6 +1,5 @@
 import sqlite3, pymssql
 
-
 # Creamos una BD de SQLite llamada Northwind.db
 connection = sqlite3.connect('Northwind.db')
 cursor = connection.cursor()
@@ -14,7 +13,6 @@ if (numTablas == 0):
     cursor.execute(command)
 
 #Transladamos la info de SQL Server -> SQLite
-
 connection2 = pymssql.connect(server='localhost', user = 'test', password = 'test100', database = 'Northwind')
 
 cursor2 = connection2.cursor()
@@ -22,9 +20,20 @@ command = 'SELECT * FROM Customers'
 cursor2.execute(command)
 
 data = cursor2.fetchall()
-
 command = "INSERT INTO Customers VALUES (?,?,?,?,?,?,?,?,?,?,?)"
+
+################################################################################
+
+#for r in data:
+#    cursor.execute(command, r)
+
+################################################################################
+
 cursor.executemany(command, data)
+
+################################################################################
+
+
 connection.commit()
 
 cursor.close()
