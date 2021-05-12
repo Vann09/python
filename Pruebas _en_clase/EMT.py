@@ -28,17 +28,21 @@ if (token !=None):
         "Text_IncidencesRequired_YN":"Y",
         "DateTime_Referenced_Incidencies_YYYYMMDD": datetime.now().strftime ('%Y%m%d')
     }
-    response = requests.post(url['StopInfo'].replace ('<stopId>', stopID), data=json.dumps(data), headers=headers)
+    
+response = requests.post(url['StopInfo'].replace ('<stopId>', stopID), data=json.dumps(data), headers=headers)
+if response.status_code == 200:
+    data = response.json()
+    print (f"Información de la parada: {stopID}")
 
-    if (response.status_code == 200):
-        print ('Destino:' , data['data'][0]['Arrive'][0]['destination'])
-        print ('Bus: ', data['data'][0]['Arrive'][0]['bus'])
-        print ('Distancia:' , data['data'][0]['Arrive'][0]['DistanceBus'])
-        if (data['data'][0]['estimateArrive']['Arrive'][0] >= 1200):
+    for d in data['data'][0]['Arrive']:
+        print ("==============================================")
+        print ('Línea:', d['line'])
+        print ('Destino:' , d['destination'])
+        print ('Bus: ', d['bus'])
+        print ('Distancia:' , d['DistanceBus'], "m")
+        if (d['estimateArrive'] >= 1200):
             print ("El autobus tardará 20 minutos o más")
         else:
-            print ('Llegada:' , (data['data'][0]['Arrive'][0]['estimateArrive']//60))
-    else:
-        print ('Error:', response.reason)
-
-    
+            print ('Llegada:' , (d['estimateArrive']//60), "min")
+else:
+    print ('Error:', response.reason)

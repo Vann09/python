@@ -22,15 +22,17 @@ if (token !=None):
     response = requests.get(url['ParkInfo'], headers=headers)
     data = response.json()['data']
     if (response.status_code == 200):
+        totalparking = 0
         for d in data:
             print ("===========================================")
             print ("Nombre:" , d['name'])
             print ("Dirección:" , d['address'])
             print ("Codigo Postal" , d['postalCode'])
             print ("Plazas de Parking:", d['freeParking'])
-            totalparking = 0
+            
             if (d['freeParking'] != None):
-                totalparking += d['freeParking']
+                parking = d['freeParking']
+                totalparking += parking
             
             print ()
             
