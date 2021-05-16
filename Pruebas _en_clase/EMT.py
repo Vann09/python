@@ -40,6 +40,8 @@ if response.status_code == 200:
         print ('Destino:' , d['destination'])
         print ('Bus: ', d['bus'])
         print ('Distancia:' , d['DistanceBus'], "metros")
+        if (d['estimateArrive'] <= 60):
+            print ("El autobus esta llegando")
         if (d['estimateArrive'] >= 1200):
             print ("El autobus tardará 20 minutos o más")
         else:
