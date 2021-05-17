@@ -1,6 +1,7 @@
 import requests, json
 
 url = 'http://school.labs.com.es/api/students/'
+
 #{"firstName":"Ana","lastName":"Sánchez","dateOfBirth":"2006-05-09","classId":1}
 name = input("Dime tu nombre: ")
 surname = input ("Dime tus apellidos: ")

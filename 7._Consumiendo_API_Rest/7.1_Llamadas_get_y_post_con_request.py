@@ -4,12 +4,20 @@ import requests
 url = 'http://api.open-notify.org/iss-now.json'
 response = requests.get(url)
 
+# Una vez procesada la solicitud y recibida la respuesta podemos ver el código de estado
+# La propiedad REASON nos informa del código de estado en modo texto.
 print ('Código de estado:', response.status_code)
 print ('Estado: ', response.reason)
 
+# El código de estado 200 indica que la solicitus se ha procesado OK
 if (response.status_code == 200):
+    # La propiedad HEADERS es un diccionario que contiene la información de la cabecera del mensaje
     print ('Cabeceras:', response.headers)
     print ('Tipo del Contenido:', response.headers['Content-Type'])
+    # El contenido de la respuesta lo encontramos en:
+    #  - propiedad TEXT en formato texto
+    #  - propiedad CONTENT como un array de bytes
+    #  - función JSON() como objeto, normalmente un diccionario
     if (response.headers['Content-Type'] == 'application/json'):
         data = response.json()
         print ('Latitud:' , data['iss_position']['latitude'])

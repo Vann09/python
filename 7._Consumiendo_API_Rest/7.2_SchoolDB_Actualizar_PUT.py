@@ -4,10 +4,8 @@ url = 'http://school.labs.com.es/api/students/'
 
 id = input ('Dime tu ID: ')
 response = requests.get(url+id)
-
-print ('Código de estado:', response.status_code)
-print ('Estado: ', response.reason)
 data = None
+headers = { 'Content-Type' : 'application/json' }
 
 if (response.status_code == 200):
     data = response.json()
@@ -35,12 +33,12 @@ room = int(input(f'Clase ({data["classId"]}):'))
 if (room != ""):
     data['classId'] = room
 
-requests.put(url+id, data=json.dumps(data))
+requests.put(url+id, data=json.dumps(data),headers = headers)
 
 
 if (response.status_code == 204):
-    data = response.json()
     print ("Registro modificado correctamente")
-    print (data)
+else:
+    print(f'Error: {response.reason}')
 
 
