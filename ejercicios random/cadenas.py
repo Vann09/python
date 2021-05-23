@@ -29,8 +29,9 @@
 #vocal = input ("Dime una vocal: ")
 #print (phrase.replace( vocal,vocal.upper()))
 
-
-
+#Escribir un programa que pregunte el correo electrónico del usuario en la consola y muestre por pantalla otro correo electrónico con el mismo nombre (la parte delante de la arroba @) pero con dominio ceu.es.
+email = input ("Dime tu correo electrónico: ")
+print (email[email.find("@")]+ "@ceu.es")
 
 
 
