@@ -8,7 +8,8 @@ newcadena = cadena.replace("o","-")
 print (cadena[2]) #Empieza contando desde 0
 print (cadena[2:]) #Enseña desde la posicion 2 incluida
 print (cadena[:2]) #Enseña hasta la posicion 2 no incluida
-print (cadena[::-1]) # Imprime la frase al revés
+print (cadena[::-1]) # Imprime la frase invertida
+print (cadena[:cadena.find("Mundo")] + "Mundito 1234") # Sustituye lo del find por la segunda string
 print (cadena[2:6]) #Enseña desde 2 hasta 6 (6 no incluida)
 print (cadena[-3]) #Enseña contando desde el final
 print ("")
