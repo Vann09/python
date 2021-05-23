@@ -19,3 +19,18 @@
 #Los teléfonos de una empresa tienen el siguiente formato prefijo-número-extension donde el prefijo es el código del país +34, y la extensión tiene dos dígitos (por ejemplo +34-913724710-56). Escribir un programa que pregunte por un número de teléfono con este formato y muestre por pantalla el número de teléfono sin el prefijo y la extensión.
 #tlfn = input ("Dime un teléfono (prefijo-número-extension): ")
 #print (f"El nº de teléfono es {tlfn[4:-3]}.")
+
+#Escribir un programa que pida al usuario que introduzca una frase en la consola y muestre por pantalla la frase invertida.
+#phrase = input ("Dime una frase: ")
+#print (phrase[::-1])
+
+#Escribir un programa que pida al usuario que introduzca una frase en la consola y una vocal, y después muestre por pantalla la misma frase pero con la vocal introducida en mayúscula.
+#phrase = input ("Dime una frase: ")
+#vocal = input ("Dime una vocal: ")
+#print (phrase.replace( vocal,vocal.upper()))
+
+
+
+
+
+
