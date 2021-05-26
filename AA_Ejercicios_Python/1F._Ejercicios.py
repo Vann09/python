@@ -37,3 +37,4 @@ import math
 
 
 # del 20 al 10 multimplicado del 5 a 8, utilizando dos FOR ????
+# 20x5, 20x6, 20x7..., 19x5, 19x6... Y así 

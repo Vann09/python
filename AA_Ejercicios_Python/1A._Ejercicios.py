@@ -9,7 +9,7 @@ lista = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "
 #### A1. Pregunta el nombre de Operador y muestra un saludo incluyendo el contenido de la variable cadena.
 
 nombre = input("Dime tu nombre: ")
-print (print ((f"{cadena} Soy {nombre}")))
+print  ((f"{cadena} Soy {nombre}"))
 
 #### A2. Muestra el saludo en mayúsculas, minúsculas y con la letra de cada palabra en mayúsculas.
 
