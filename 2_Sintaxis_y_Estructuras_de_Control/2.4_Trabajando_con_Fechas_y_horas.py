@@ -19,8 +19,6 @@ print ("Fecha1: ", dt1)
 #Almaceno en la variable dt2 la fecha y hora actual del sistema
 dt2 = datetime.now()
 print ("Fecha2: ", dt2)
-
-#
 print ("Año: ", dt2.year)
 print ("Mes: ", dt2.month)
 print ("Dia: ", dt2.day)

@@ -19,7 +19,7 @@
 fichero = open(".\\Ficheros\\fichero.txt", "rt")
 print(type(fichero))
 
-# Utilizamos la propiedad CLOSED para saber si el fichero esta abirto
+# Utilizamos la propiedad CLOSED para saber si el fichero esta abierto
 print(f"Fichero Cerrado: {fichero.closed}")
 
 # Utilizamos la función READ para leer todo el contenido
@@ -27,7 +27,7 @@ print(f"Fichero Cerrado: {fichero.closed}")
 contenido = fichero.read()
 print(type(contenido))
 
-# Utilizamos la función READ para leer x caractere, por ejemplo los 1000 primeros
+# Utilizamos la función READ para leer x caracteres, por ejemplo los 1000 primeros
 contenido = fichero.read(1000)
 
 # Utilizamos la función READLINE para leer linea a linea
@@ -42,7 +42,7 @@ print(type(lineas))
 
 # Utilizamos FOR para leer el fichero línea a línea
 # ATENCIÓN: Los siguientes for no muestran contenido, después del readlines() anterior 
-# el curso se encuenta al final del fichero. Para comprobar el funcionamiento del for 
+# el cursor se encuenta al final del fichero. Para comprobar el funcionamiento del for 
 # tienes que comentar las líneas de código anteriores.
 for linea in fichero:
     print(linea)

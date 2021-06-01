@@ -3,7 +3,7 @@ import pymssql
 #Establecemos la conexión con SQL Server
 conexion = pymssql.connect(server='localhost', user = 'test', password = 'test100', database = 'Northwind')
 
-#Creamos un cursor para ejercutar comandos en la base de datos
+#Creamos un cursor para ejecutar comandos en la base de datos
 #Los datos se retornar como Tuplas
 cursor = conexion.cursor()
 
@@ -37,10 +37,10 @@ conexion.close()
 #Para añadir info a la base de datos
 cursor.execute("INSERT INTO Customers (CustomerID , CompanyName, City, Country) VALUES ('DEMO2', 'Empresa2, SL', 'Madrid', 'Spain') ")
 
-#Utilizamos la función commit() para confirmar inserciones, actulizaciones o borrado de datos
+#Utilizamos la función commit() para confirmar inserciones, actualizaciones o borrado de datos
 connection.commit()
 
-#Utilizamos la función rollback() para no confirmar inserciones, actulizaciones o borrado de datos
+#Utilizamos la función rollback() para no confirmar inserciones, actualizaciones o borrado de datos
 #connection.rollback()
 
 #Insertamos varios registros utilizando un comando con comodines y una lista de registros
@@ -64,7 +64,7 @@ connection.commit()
 print(f"Número de filas modificadas: {cursor.rowcount}")
 
 #Eliminados datos, comando DELETE
-#Eliminamos uno registro 
+#Eliminamos un registro 
 cursor.execute("DELETE FROM Customers WHERE CustomerID = 'DEMO5'")
 cursor.execute('DELETE FROM Customers WHERE CustomerID = %d', 'DEMO5')
 cursor.execute('DELETE FROM Customers WHERE Country = %d', 'EEUU')

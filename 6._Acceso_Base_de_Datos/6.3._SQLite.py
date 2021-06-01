@@ -40,8 +40,8 @@ for r in data:
 sys.exit()
 
 #Insertar un registro en la base de datos
-command = "INSERT INTO Alumnos (id, nombre) VALUES ('A00', 'Borja')"
-command = "INSERT INTO Alumnos VALUES ('A00', 'Borja', 'Cabeza', '2B', Null)"
+command = "INSERT INTO Alumnos (id, nombre) VALUES ('A00', 'Jose')"
+command = "INSERT INTO Alumnos VALUES ('A00', 'Jose', 'Esteban', '2B', Null)"
 cursor.execute(command)
 connection.commit()
 
